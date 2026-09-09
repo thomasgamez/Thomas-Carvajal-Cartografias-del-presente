@@ -1,0 +1,173 @@
+/* ============================================================
+   CARTOGRAFÍAS DEL PRESENTE — estilos compartidos del sitio (v5)
+   Concepto: expediente editorial oscuro. Las líneas ya no son
+   fondo decorativo — son separadores y acentos que distinguen
+   cada tema (cada página define su --accent).
+   ============================================================ */
+:root{
+  --bg: #0a0d12;
+  --bg-panel: #12161d;
+  --line: rgba(255,255,255,0.09);
+  --text: #e9edf2;
+  --text-soft: #8b93a1;
+  --red: #ff6b6b;
+  --green: #52d17c;
+  --accent: #4fc3f7; /* cada página la sobreescribe según su tema */
+}
+
+/* --- paleta de acento por tema: se pone como clase en <body> --- */
+body.topic-intro    { --accent: #4fc3f7; }
+body.topic-glosario { --accent: #c084fc; }
+body.topic-e1       { --accent: #4fc3f7; } /* problema */
+body.topic-e2       { --accent: #38bdf8; } /* contexto */
+body.topic-e3       { --accent: #a78bfa; } /* teoría */
+body.topic-e4       { --accent: #fbbf24; } /* evidencia */
+body.topic-e5       { --accent: #fb7185; } /* postura */
+body.topic-e6       { --accent: #52d17c; } /* cierre */
+body.topic-anexos   { --accent: #8b93a1; }
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+
+body{
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, sans-serif;
+  margin: 0;
+}
+
+/* ============ MENÚ LATERAL (hamburguesa, overlay) ============ */
+.menu-btn{
+  position: fixed; top: 18px; left: 18px; z-index: 60;
+  width: 42px; height: 42px;
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer;
+}
+.menu-btn span{
+  display:block; width:18px; height:2px; background: var(--text);
+  position: relative; transition: transform .2s ease, opacity .2s ease;
+}
+.menu-btn span::before, .menu-btn span::after{
+  content:""; position:absolute; left:0; width:18px; height:2px; background: var(--text);
+  transition: transform .2s ease, opacity .2s ease;
+}
+.menu-btn span::before{ transform: translateY(-6px); }
+.menu-btn span::after{ transform: translateY(6px); }
+body.menu-open .menu-btn span{ background: transparent; }
+body.menu-open .menu-btn span::before{ transform: rotate(45deg); }
+body.menu-open .menu-btn span::after{ transform: rotate(-45deg); }
+
+.sidebar{
+  position: fixed; top:0; left:0; height:100vh; width: 260px;
+  background: var(--bg-panel);
+  border-right: 1px solid var(--line);
+  padding: 90px 0 30px;
+  transform: translateX(-100%);
+  transition: transform .25s ease;
+  z-index: 55;
+  overflow-y: auto;
+}
+body.menu-open .sidebar{ transform: translateX(0); }
+
+.backdrop{
+  position: fixed; inset:0; background: rgba(0,0,0,0.55);
+  opacity:0; pointer-events:none; transition: opacity .2s ease; z-index: 50;
+}
+body.menu-open .backdrop{ opacity:1; pointer-events:auto; }
+
+.sidebar .side-eyebrow{
+  font-family:'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing:.06em;
+  color: var(--text-soft); padding: 0 26px 14px; text-transform: uppercase;
+}
+.sidebar nav{ display:flex; flex-direction:column; }
+.sidebar nav a{
+  font-family:'IBM Plex Mono', monospace; font-size: 13.5px;
+  color: var(--text-soft); text-decoration:none;
+  padding: 11px 26px; border-left: 3px solid transparent;
+}
+.sidebar nav a:hover{ color: var(--text); background: rgba(255,255,255,0.03); }
+.sidebar nav a.is-current{
+  color: var(--text); border-left-color: var(--accent); background: rgba(255,255,255,0.04);
+}
+.sidebar nav .divider{ height:1px; background: var(--line); margin: 12px 26px; }
+
+/* ============ CONTENIDO ============ */
+.wrap{ max-width: 720px; margin: 0 auto; padding: 90px 24px 100px; }
+
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace; font-size: 12px; color: var(--accent);
+  letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px;
+}
+
+.hero{ border-bottom: 1px solid var(--line); padding-bottom: 34px; margin-bottom: 38px; }
+.hero h1{
+  font-family:'Space Grotesk', sans-serif;
+  font-size: clamp(36px, 6vw, 58px);
+  font-weight: 700; line-height: 1.03; letter-spacing: -0.01em;
+  margin: 0 0 14px; color: #fff;
+  border-left: 4px solid var(--accent);
+  padding-left: 18px;
+}
+.hero .sub{
+  color: var(--text-soft); font-size: 18px; line-height: 1.55;
+  max-width: 56ch; margin: 0; padding-left: 22px;
+}
+
+.field{ border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 24px 0; margin: 0 0 34px; }
+.field dl{ display:grid; grid-template-columns: 140px 1fr; row-gap:16px; column-gap:18px; margin:0; }
+.field dt{
+  font-family:'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--accent);
+  text-transform: uppercase; letter-spacing:.05em; padding-top:3px;
+}
+.field dd{ margin:0; font-size:16.5px; }
+@media (max-width: 480px){
+  .field dl{ grid-template-columns: 1fr; row-gap:4px; }
+  .field dt{ padding-top:10px; }
+}
+
+figure.figure{ margin: 30px 0; border-left: 3px solid var(--accent); padding-left: 18px; }
+figure.figure img{ display:block; width:100%; height:auto; border-radius: 4px; }
+figure.figure figcaption{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-soft); padding-top:8px; }
+
+.body-copy p{ font-size: 17px; line-height: 1.75; max-width: 62ch; color: var(--text); }
+.body-copy p + p{ margin-top: 18px; }
+
+/* ============ índice de entradas (portada) ============ */
+.index-list{ margin-top: 44px; }
+.index-item{
+  display:flex; gap:20px; align-items:flex-start;
+  padding: 24px 0; border-top: 1px solid var(--line);
+  text-decoration:none; color: inherit;
+}
+.index-list a.index-item:last-child{ border-bottom: 1px solid var(--line); }
+.index-item .num{ font-family:'Space Grotesk', sans-serif; font-size: 28px; font-weight:700; color: var(--accent); min-width: 50px; }
+.index-item .meta h3{ font-family:'Space Grotesk', sans-serif; font-size:19px; font-weight:600; margin:0 0 6px; color:#fff; }
+.index-item .meta p{ margin:0; color: var(--text-soft); font-size:14.5px; max-width:50ch; }
+.index-item .arrow{ margin-left:auto; color: var(--text-soft); font-size:20px; transition: transform .15s ease, color .15s ease; }
+.index-item:hover .arrow{ transform: translateX(4px); color: var(--accent); }
+
+/* ============ secciones / glosario ============ */
+.section-title{
+  font-family:'Space Grotesk', sans-serif; font-size: 24px; font-weight:700; color:#fff;
+  border-left: 4px solid var(--accent); padding-left: 16px; margin: 46px 0 18px;
+}
+
+.term{ border-top: 1px solid var(--line); padding: 18px 0; }
+.term:last-child{ border-bottom: 1px solid var(--line); }
+.term .t{
+  font-family:'IBM Plex Mono', monospace; font-size:14.5px; font-weight:500; color: var(--accent);
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+}
+.term .tag{ font-size:10.5px; border:1px solid currentColor; border-radius:3px; padding:1px 7px; }
+.term .tag.riesgo{ color: var(--red); }
+.term .tag.herramienta{ color: var(--green); }
+.term .d{ margin:8px 0 0; font-size:15.5px; line-height:1.6; max-width:60ch; color: var(--text-soft); }
+
+footer.site-footer{
+  max-width: 720px; margin: 60px auto 0; padding: 24px 24px 0;
+  border-top: 1px solid var(--line);
+  font-family:'IBM Plex Mono', monospace; font-size: 11px; color: var(--text-soft);
+}
