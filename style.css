@@ -221,3 +221,75 @@ footer.site-footer{
   border-top: 1px solid var(--line);
   font-family:'IBM Plex Mono', monospace; font-size: 11px; color: var(--text-soft);
 }
+
+/* ============================================================
+   v6 — mejoras visuales (se suman a lo anterior, no lo reemplazan)
+   ============================================================ */
+body.topic-about{ --accent:#2dd4bf; }
+::selection{ background: color-mix(in srgb, var(--accent) 35%, transparent); }
+a:focus-visible,button:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+body{ line-height:1.5; -webkit-font-smoothing:antialiased; }
+
+/* menú siempre visible en pantallas anchas */
+@media (min-width:1100px){
+  .sidebar{ transform:none; z-index:40; }
+  .menu-btn,.backdrop{ display:none; }
+  body{ padding-left:260px; }
+  .wrap{ padding-top:70px; }
+}
+@media (max-width:600px){ .wrap{ padding:84px 20px 70px; } }
+
+/* hero cartográfico: cuadrícula + resplandor, sin imágenes externas */
+.hero.map{
+  background:
+    radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--accent) 24%, transparent), transparent 55%),
+    linear-gradient(var(--line) 1px, transparent 1px) 0 0/36px 36px,
+    linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0/36px 36px,
+    var(--bg-panel);
+  border:1px solid var(--line); border-radius:12px; padding:56px 32px 38px;
+}
+.hero.map h1{ border-left:none; padding-left:0; }
+.hero.map .sub{ padding-left:0; }
+
+/* avance del proyecto */
+.progress{ margin-top:44px; }
+.progress-head{ display:flex; justify-content:space-between; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--text-soft); margin-bottom:8px; }
+.progress-bar{ height:4px; background:var(--line); border-radius:4px; overflow:hidden; }
+.progress-bar i{ display:block; height:100%; background:var(--accent); }
+.progress + .index-list{ margin-top:22px; }
+
+/* tarjetas del índice con acento propio y elevación */
+.index-item{ transition: background .15s ease, transform .15s ease; }
+.index-item:hover{ transform:translateY(-2px); }
+.index-item .num{ display:flex; align-items:center; gap:12px; }
+.index-item:nth-child(1) .num,.index-item:nth-child(1) .arrow:hover{ color:#4fc3f7; }
+.index-item:nth-child(2) .num{ color:#38bdf8; }
+.index-item:nth-child(3) .num{ color:#a78bfa; }
+.index-item:nth-child(4) .num{ color:#fbbf24; }
+.index-item:nth-child(5) .num{ color:#fb7185; }
+.index-item:nth-child(6) .num{ color:#52d17c; }
+
+/* estados */
+.badge{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:500; letter-spacing:.04em; text-transform:uppercase; border:1px solid currentColor; border-radius:999px; padding:2px 9px; }
+.badge.live{ color:var(--green); }
+.badge.wip{ color:var(--text-soft); }
+
+/* plantillas de entradas pendientes */
+.draft{ border:1px dashed var(--line); background:rgba(255,255,255,0.02); border-radius:8px; padding:16px 20px; margin:26px 0; font-size:15px; color:var(--text-soft); max-width:68ch; }
+.draft strong{ color:var(--text); }
+.draft-line{ border-left:2px dashed var(--line); padding-left:16px; color:var(--text-soft) !important; }
+.check{ margin:10px 0 0; padding-left:20px; } .check li{ margin:4px 0; }
+.todo{ color:#fbbf24; background:rgba(251,191,36,.08); border-radius:4px; padding:0 5px; font-size:.92em; }
+
+/* anterior / siguiente */
+.pager{ display:flex; justify-content:space-between; gap:16px; margin-top:48px; padding-top:20px; border-top:1px solid var(--line); font-family:'IBM Plex Mono',monospace; font-size:13px; }
+.pager a{ color:var(--text-soft); text-decoration:none; } .pager a:hover{ color:var(--accent); }
+
+/* anexos y hoja de vida */
+.ver{ display:block; margin-top:8px; font-family:'IBM Plex Mono',monospace; font-size:11.5px; }
+.cv-item{ display:grid; grid-template-columns:110px 1fr; gap:18px; padding:14px 0; border-top:1px solid var(--line); font-size:15.5px; line-height:1.6; }
+.cv-item .when{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--accent); padding-top:3px; }
+.chips{ display:flex; flex-wrap:wrap; gap:10px; }
+@media (max-width:480px){ .cv-item{ grid-template-columns:1fr; gap:4px; } }
+
+@media (prefers-reduced-motion:reduce){ *{ transition:none !important; scroll-behavior:auto !important; } }
