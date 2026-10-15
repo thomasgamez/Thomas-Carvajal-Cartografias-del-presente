@@ -7,6 +7,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  /* Estilos añadidos solo para las nuevas secciones del glosario */
+  .gl-group { font-family: 'Space Grotesk', sans-serif; font-size: 20px; margin: 40px 0 6px; }
+  .gl-group-note { font-size: 14px; opacity: .75; margin: 0 0 14px; }
+  .term .src { font-family: 'IBM Plex Mono', monospace; font-size: 12px; opacity: .75; margin: 2px 0 6px; }
+  .term .w { margin: 6px 0 0; font-size: 15px; }
+  .tag.teoria { border: 1px solid currentColor; background: transparent; }
+  .tag.fenomeno { border: 1px solid currentColor; background: transparent; }
+</style>
 </head>
 <body class="topic-glosario">
 
@@ -22,7 +31,7 @@
     <div class="divider"></div>
     <a href="entrada-1.html">01 · Posturas</a>
     <a href="entrada-2.html">02 · Teoría</a>
-    <a href="entrada-3.html">03 · Evidencia</a>
+    <a href="entrada-3.html">03 · Análisis crítico</a>
     <a href="entrada-4.html">04 · Caso</a>
     <a href="entrada-5.html">05 · Postura</a>
     <a href="entrada-6.html">06 · Cierre</a>
@@ -37,52 +46,172 @@
   <h1 class="section-title" style="font-size:32px; margin-top:0;">Glosario razonado</h1>
 
   <div class="body-copy">
-    <p>Términos clave que voy a usar a lo largo del blog, con su definición y por qué importan para entender la desinformación en redes sociales.</p>
+    <p>Términos clave que uso a lo largo del blog. Cada uno incluye su definición en mis palabras, la corriente o el autor de donde proviene (cuando aplica) y por qué importa para entender la desinformación en redes sociales.</p>
   </div>
+
+  <!-- ============ 1. FENÓMENOS ============ -->
+  <h2 class="gl-group">1. El fenómeno</h2>
+  <p class="gl-group-note">Conceptos para nombrar qué está pasando en las redes.</p>
 
   <div class="term">
     <div class="t">DESINFORMACIÓN <span class="tag riesgo">riesgo</span></div>
+    <div class="src">Distinción atribuida a Wardle y Derakhshan (2017)</div>
     <p class="d">Información falsa creada y difundida de forma deliberada para engañar u obtener un beneficio (político, económico, social).</p>
+    <p class="w"><strong>Por qué importa:</strong> es el eje de mi pregunta; lo que cambia entre posturas es quién debe responder a ella.</p>
   </div>
 
   <div class="term">
     <div class="t">MALINFORMACIÓN <span class="tag riesgo">riesgo</span></div>
+    <div class="src">Distinción atribuida a Wardle y Derakhshan (2017)</div>
     <p class="d">Información verdadera que se difunde con intención de hacer daño, por ejemplo sacándola de contexto o filtrando datos privados.</p>
+    <p class="w"><strong>Por qué importa:</strong> muestra que el problema no es solo la falsedad, sino también la intención y el contexto.</p>
   </div>
 
   <div class="term">
     <div class="t">INFODEMIA <span class="tag riesgo">riesgo</span></div>
+    <div class="src">Término difundido por la OMS durante la pandemia de COVID-19</div>
     <p class="d">Exceso de información —verdadera y falsa— sobre un tema, que dificulta encontrar fuentes confiables en momentos de crisis.</p>
+    <p class="w"><strong>Por qué importa:</strong> explica por qué más información no significa estar mejor informado.</p>
   </div>
 
   <div class="term">
     <div class="t">CÁMARA DE ECO <span class="tag riesgo">riesgo</span></div>
+    <div class="src">Idea asociada a Cass Sunstein</div>
     <p class="d">Entorno digital donde una persona solo recibe contenidos que confirman lo que ya piensa, reforzado por el algoritmo de recomendación.</p>
+    <p class="w"><strong>Por qué importa:</strong> pone en duda el "debate libre de ideas" de Mill, porque nunca nos topamos con la idea contraria.</p>
   </div>
 
   <div class="term">
     <div class="t">DEEPFAKE <span class="tag riesgo">riesgo</span></div>
     <p class="d">Video, audio o imagen manipulado con inteligencia artificial para que una persona parezca decir o hacer algo que nunca ocurrió.</p>
+    <p class="w"><strong>Por qué importa:</strong> debilita la confianza en lo que vemos, que antes servía como prueba.</p>
   </div>
 
   <div class="term">
     <div class="t">ASTROTURFING <span class="tag riesgo">riesgo</span></div>
     <p class="d">Simulación de un movimiento de opinión "espontáneo" y masivo, en realidad coordinado por cuentas falsas o pagadas.</p>
+    <p class="w"><strong>Por qué importa:</strong> imita al "pueblo" que describe Laclau, pero fabricado desde arriba.</p>
   </div>
 
   <div class="term">
-    <div class="t">POSVERDAD</div>
+    <div class="t">POSVERDAD <span class="tag fenomeno">fenómeno</span></div>
     <p class="d">Situación en la que los hechos objetivos pesan menos en la opinión pública que las emociones y las creencias personales.</p>
+    <p class="w"><strong>Por qué importa:</strong> describe el ambiente en el que la desinformación se vuelve eficaz.</p>
   </div>
+
+  <!-- ============ 2. HERRAMIENTAS ============ -->
+  <h2 class="gl-group">2. Herramientas y mecanismos</h2>
+  <p class="gl-group-note">Lo que ayuda a verificar o a distribuir la información.</p>
 
   <div class="term">
     <div class="t">FACT-CHECKING <span class="tag herramienta">herramienta</span></div>
     <p class="d">Proceso de verificación de datos, citas o afirmaciones públicas, comparándolas con fuentes primarias y evidencia disponible.</p>
+    <p class="w"><strong>Por qué importa:</strong> es una respuesta posible, pero plantea quién decide qué es verdadero.</p>
   </div>
 
   <div class="term">
     <div class="t">ALGORITMO DE RECOMENDACIÓN <span class="tag herramienta">herramienta</span></div>
     <p class="d">Sistema que decide qué contenido te muestra una plataforma, normalmente priorizando lo que más tiempo te mantiene conectado.</p>
+    <p class="w"><strong>Por qué importa:</strong> es la pieza que conecta la desinformación con el modelo de negocio de las plataformas.</p>
+  </div>
+
+  <!-- ============ 3. CONCEPTOS TEÓRICOS ============ -->
+  <h2 class="gl-group">3. Conceptos teóricos</h2>
+  <p class="gl-group-note">Las herramientas con las que analizo el problema, organizadas por corriente.</p>
+
+  <!-- Liberalismo -->
+  <div class="term">
+    <div class="t">LIBERTAD NEGATIVA <span class="tag teoria">teoría</span></div>
+    <div class="src">Liberalismo · John Stuart Mill</div>
+    <p class="d">Ser libre significa que nadie interfiere en lo que pienso o digo. Cuanta menos interferencia externa, más libertad.</p>
+    <p class="w"><strong>Por qué importa:</strong> es la base para oponerse a que el Estado o las plataformas censuren contenido.</p>
+  </div>
+
+  <div class="term">
+    <div class="t">PLURALISMO RAZONABLE <span class="tag teoria">teoría</span></div>
+    <div class="src">Liberalismo · John Rawls</div>
+    <p class="d">En una sociedad libre conviven personas con ideas distintas sobre lo que es una buena vida, y esas diferencias no se pueden eliminar sin recurrir a la fuerza.</p>
+    <p class="w"><strong>Por qué importa:</strong> advierte que no hay una única verdad política que todos acepten.</p>
+  </div>
+
+  <!-- Populismo -->
+  <div class="term">
+    <div class="t">FRONTERA POLÍTICA <span class="tag teoria">teoría</span></div>
+    <div class="src">Populismo · Ernesto Laclau</div>
+    <p class="d">Línea que se traza entre "el pueblo" y una élite, y que organiza el conflicto político en dos bandos.</p>
+    <p class="w"><strong>Por qué importa:</strong> desde esta lectura, acusar a alguien de difundir desinformación puede verse como una forma de la élite de silenciar al pueblo.</p>
+  </div>
+
+  <div class="term">
+    <div class="t">CADENA EQUIVALENCIAL <span class="tag teoria">teoría</span></div>
+    <div class="src">Populismo · Ernesto Laclau</div>
+    <p class="d">Unión de demandas distintas que se juntan porque comparten un adversario común, aunque no tengan nada más en común.</p>
+    <p class="w"><strong>Por qué importa:</strong> ayuda a entender cómo grupos diversos se agrupan en torno a un mismo relato en redes.</p>
+  </div>
+
+  <!-- Tecnopolítica -->
+  <div class="term">
+    <div class="t">CAPITALISMO DE VIGILANCIA <span class="tag teoria">teoría</span></div>
+    <div class="src">Tecnopolítica · Shoshana Zuboff</div>
+    <p class="d">Modelo económico que convierte nuestra experiencia en datos para vender predicciones sobre nuestro comportamiento.</p>
+    <p class="w"><strong>Por qué importa:</strong> sugiere que la desinformación circula porque el negocio de las plataformas premia lo que genera atención.</p>
+  </div>
+
+  <div class="term">
+    <div class="t">EXCEDENTE CONDUCTUAL <span class="tag teoria">teoría</span></div>
+    <div class="src">Tecnopolítica · Shoshana Zuboff</div>
+    <p class="d">Datos de lo que hacemos en línea que van más allá de lo que se necesita para darnos el servicio, y que se usan con fines comerciales.</p>
+    <p class="w"><strong>Por qué importa:</strong> es la materia prima que alimenta los algoritmos que nos recomiendan contenido.</p>
+  </div>
+
+  <div class="term">
+    <div class="t">PODER INSTRUMENTARIO <span class="tag teoria">teoría</span></div>
+    <div class="src">Tecnopolítica · Shoshana Zuboff</div>
+    <p class="d">Poder que no prohíbe ni castiga, sino que orienta nuestra conducta mediante el diseño de las plataformas.</p>
+    <p class="w"><strong>Por qué importa:</strong> muestra una forma de influencia que no se ve como censura ni como imposición.</p>
+  </div>
+
+  <div class="term">
+    <div class="t">RIESGO EPISTÉMICO <span class="tag teoria">teoría</span></div>
+    <div class="src">Tecnología y sociedad</div>
+    <p class="d">Peligro de que la manipulación y la desinformación erosionen nuestra capacidad de discutir con información confiable.</p>
+    <p class="w"><strong>Por qué importa:</strong> es lo que está en juego para la democracia si no sabemos en qué creer.</p>
+  </div>
+
+  <div class="term">
+    <div class="t">SOBERANÍA DIGITAL <span class="tag teoria">teoría</span></div>
+    <div class="src">Tecnopolítica</div>
+    <p class="d">Capacidad de una persona, comunidad o Estado de controlar sus propios datos y la infraestructura tecnológica que usa.</p>
+    <p class="w"><strong>Por qué importa:</strong> plantea quién tiene el control sobre lo que vemos y qué margen tenemos los usuarios.</p>
+  </div>
+
+  <!-- Lentes de la entrada 2 -->
+  <div class="term">
+    <div class="t">HEGEMONÍA <span class="tag teoria">teoría</span></div>
+    <div class="src">Poder y hegemonía · Antonio Gramsci</div>
+    <p class="d">Cuando un grupo logra que su visión del mundo se sienta natural para todos, sin necesidad de imponerla por la fuerza.</p>
+    <p class="w"><strong>Por qué importa:</strong> sirve para preguntar qué ideas se vuelven "sentido común" en las redes y quién las impulsa.</p>
+  </div>
+
+  <div class="term">
+    <div class="t">DISCURSO <span class="tag teoria">teoría</span></div>
+    <div class="src">Poder y hegemonía · Michel Foucault</div>
+    <p class="d">Conjunto de enunciados que no solo describe la realidad, sino que la produce. El poder también crea saber, no solo reprime.</p>
+    <p class="w"><strong>Por qué importa:</strong> cambia la pregunta: no es solo qué es falso, sino quién tiene autoridad para decirlo.</p>
+  </div>
+
+  <div class="term">
+    <div class="t">CODIFICACIÓN Y DECODIFICACIÓN <span class="tag teoria">teoría</span></div>
+    <div class="src">Cultura y medios · Stuart Hall</div>
+    <p class="d">Un mensaje se produce desde una posición, pero cada audiencia lo puede leer de manera distinta según su contexto y sus creencias.</p>
+    <p class="w"><strong>Por qué importa:</strong> explica por qué un mismo contenido falso no influye igual en todos los jóvenes.</p>
+  </div>
+
+  <div class="term">
+    <div class="t">DISEÑO Y VALORES <span class="tag teoria">teoría</span></div>
+    <div class="src">Tecnología y sociedad · Andrew Feenberg</div>
+    <p class="d">Ninguna tecnología es neutral: quienes la diseñan incorporan supuestos sobre quién debe tener el control y con qué fines.</p>
+    <p class="w"><strong>Por qué importa:</strong> permite analizar las plataformas como decisiones humanas y no como algo inevitable.</p>
   </div>
 
 </div>
